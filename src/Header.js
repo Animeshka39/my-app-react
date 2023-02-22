@@ -1,4 +1,9 @@
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import React, { Component } from "react";
+import Home from '../Pages/Home';
+import Contacts from '../Pages/Contacts';
+import About from '../Pages/About';
+import Blog from '../Pages/Blog';
 import {
     Navbar,
     Nav,
@@ -44,7 +49,16 @@ export default class Header extends Component {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
+            <Router>
+    <Routes>
+        <Route path="/" element={<Home  />}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/contacts" element={<Contacts/>}/>
+        <Route path="/blog" element={<Blog/>}/>
+    </Routes>
+</Router>
             </>
+            
         )
     }
 }
